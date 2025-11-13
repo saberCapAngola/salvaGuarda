@@ -1,1 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(to bottom, #9a6003, #d8c48f);
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 2px solid #e0e0e0;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+#logo { height: 50px; }
+
+nav a {
+  margin: 0 0.6rem;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover { color: #007f5f; text-decoration: underline; }
+
+main { margin-top: 120px; }
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: justify;
+}
+
+h1 { margin-bottom: 1rem; color: #1f2937; text-align: center; }
+p { margin-bottom: 1rem; }
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  background: #f3f3f3;
+  color: #555;
+  border-top: 1px solid #ddd;
+  margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+  header { flex-direction: column; align-items: center; }
+  nav { margin-top: 0.5rem; text-align: center; }
+}
