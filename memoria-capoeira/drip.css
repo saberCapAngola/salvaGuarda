@@ -1,0 +1,4 @@
+body {font-family: Rubik, sans-serif; background: linear-gradient(#9a6003, #d8c48f); color:#1f2937; line-height:1.6;}
+header, footer {background:#fff; padding:1rem; text-align:center;}
+a {color:#007f5f; text-decoration:none;} a:hover{text-decoration:underline;}
+.btn {background:#007f5f; color:#fff; padding:0.75rem 1.25rem; border-radius:8px; display:inline-block;}
