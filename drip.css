@@ -54,20 +54,23 @@ p { margin-bottom: 1rem; }
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.cardimage {
-  width: 50%;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 1rem;
+/* Cards que funcionam como galeria */
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  align-items: start;
 }
 
-.card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  border: 1px solid #e5e7eb;
+/* Mantém textos ocupando toda a largura */
+.card h3,
+.card p,
+.card strong,
+.card a {
+  grid-column: 1 / -1;
 }
+
+
 
 footer {
   text-align: center;
@@ -80,6 +83,9 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .card img.cardimage {
+    height: 160px;
+}
   header { flex-direction: column; align-items: center; }
   nav { margin-top: 0.5rem; text-align: center; }
 }
