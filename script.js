@@ -1,8 +1,8 @@
-<script>
 /* =======================
-   FADE-IN DAS SEÇÕES
+   FADE DAS SEÇÕES
 ======================= */
 const fadeSections = document.querySelectorAll('.fade-section');
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -14,30 +14,32 @@ const observer = new IntersectionObserver((entries) => {
 fadeSections.forEach(section => observer.observe(section));
 
 /* =======================
-   LIGHTBOX
+   GALERIA / ACERVO + LIGHTBOX
 ======================= */
-const images = document.querySelectorAll('.cardimage');
+document.querySelectorAll('.cardimage').forEach(img => {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'acervo-item';
+  wrapper.setAttribute('data-caption', img.alt || '');
 
-images.forEach(img => {
+  img.parentNode.insertBefore(wrapper, img);
+  wrapper.appendChild(img);
+
   img.addEventListener('click', () => {
     const lightbox = document.createElement('div');
-    lightbox.classList.add('lightbox');
+    lightbox.className = 'lightbox';
 
-    const content = document.createElement('img');
-    content.src = img.src;
-    content.classList.add('lightbox-content');
+    const image = document.createElement('img');
+    image.src = img.src;
+    image.className = 'lightbox-content';
 
     const caption = document.createElement('div');
-    caption.classList.add('lightbox-caption');
+    caption.className = 'lightbox-caption';
     caption.textContent = img.alt || '';
 
-    lightbox.appendChild(content);
+    lightbox.appendChild(image);
     lightbox.appendChild(caption);
     document.body.appendChild(lightbox);
 
-    lightbox.addEventListener('click', () => {
-      lightbox.remove();
-    });
+    lightbox.addEventListener('click', () => lightbox.remove());
   });
 });
-</script>
