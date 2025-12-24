@@ -168,16 +168,6 @@
     © 2025 – Memória da Capoeira. Construído para preservar, compartilhar e celebrar.
   </footer>
 
-  <script>
-    const fadeSections = document.querySelectorAll('.fade-section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-    fadeSections.forEach(section => observer.observe(section));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
